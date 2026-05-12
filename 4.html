@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post Test</title>
+  </head>
+  <body>
+    <h2>Form Kelulusan Siswa</h2>
+
+    <form action="" method="post" onsubmit="return false;">
+    
+
+    <input type="radio" name="pelanggaran" id="ya">ya
+    <input type="radio" name="pelanggaran" id="Tidak" checked>Tidak
+    <button onclick="cekhasil()">Cek</button>
+</form>
+
+<div id="hasilnya">
+
+</div>
+    <p>Reza Ibrahim</p>
+    <p>Rata-rata: <span id="avg"></span></p>
+    <p>Status : <span id="status"></span></p>
+
+    <script>
+      function check() {
+        event.prefentDefault;
+
+ let nama = document.getElementById("nama").value;
+        let nilaiTeori = parseFloat(document.getElementById("nilaiTeori").value);
+        let nilaiPraktek = parseFloat(document.getElementById("nilaiPraktek").value);
+        let Kehadiran = parseFloat(document.getElementById("kehadiran").value);
+        let Pelanggaran = document.querySelector("#pelanggaran").value;
+        let lulus = "false";
+        let avg = "";
+        let predikat = "";
+
+         if (nilaiTeori < 75) {
+        status = "Tidak Lulus (Teori Kurang)";
+      } else if (nilaiPraktek < 80) {
+        status = "Tidak Lulusb (Praktek Kurang)";
+      } else if (Kehadiran < 90) {
+        status = "Tidak Lulus (Teori Kurang)";
+      } else if (Pelanggaran === true) {
+        status = "Tidak Lulus (Pelanggaran Disiplin)";
+      } else {
+        if (avg >= 90) {
+          predikat = "Sangat Baik";
+        } else if (avg >= 85) {
+          predikat = "Baik";
+        } else {
+          predikat = "Cukup";
+        }
+      }
+
+      alert(`nama : ${nama}; avg : ${rata - rata}; status : ${status}`);
+
+      document.getElementById("hasilnya").innerHTML =
+        "nama" + name + "<br>" +
+        "Rata-rata" + rataRata + "<br>" + 
+        "status" + status;
+    }
+    </script>
+  </body>
+</html>

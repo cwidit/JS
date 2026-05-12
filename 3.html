@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Sederhana</title>
+  </head>
+
+  <body>
+    <form action="" method="post" onsubmit="return false;">
+      <label for="">Nilai 1</label>
+      <input type="number" id="nilai1"/><br />
+      <label for="">Nilai 2</label>
+      <input type="number" id="nilai2"/><br />
+      <select id="operator" required>
+        <option value=" ">Pilih Operatornya</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        </select><br />
+      <button onclick="perhitungan()">Hitung</button>
+
+      <!-- <button onclick="penjumlahan()">Hasil Penjumlahan</button>
+    <button onclick="pengurangan()">Hasil Pengurangan</button>
+    <button onclick="perkalian()">Hasil Perkalian</button>
+    <button onclick="pembagian()">Hasil Pembagian</button> -->
+    </form>
+    <input type="text" id="hasil">
+    <script>
+      // function penjumlahan() {
+      //   // parseint utk bilangan bulat 0,1,2 dan 2.0, 2.3 dst
+      //   // parsefloat utk bilangan pecahan
+      //   let nilai1 = parseFloat(document.getElementById ("nilai1").value);
+      //   let nilai2 = parseFloat(document.getElementById ("nilai2").value);
+
+      //   let hasil = nilai1 + nilai2;
+      //   alert(`Hasilnya adalah ${hasil}`);
+      // }
+
+      // function pengurangan() {
+      //   // parseint utk bilangan bulat 0,1,2 dan 2.0, 2.3 dst
+      //   // parsefloat utk bilangan pecahan
+      //   let nilai1 =parseFloat(document.getElementById ("nilai1").value);
+      //   let nilai2 =parseFloat(document.getElementById ("nilai2").value);
+
+      //   let hasil = nilai1 - nilai2;
+      //   alert(`Hasilnya adalah ${hasil}`);
+      // }
+
+      // function perkalian() {
+      //   // parseint utk bilangan bulat 0,1,2 dan 2.0, 2.3 dst
+      //   // parsefloat utk bilangan pecahan
+      //   let nilai1 =parseFloat(document.getElementById ("nilai1").value);
+      //   let nilai2 =parseFloat(document.getElementById ("nilai2").value);
+
+      //   let hasil = nilai1 * nilai2;
+      //   alert(`Hasilnya adalah ${hasil}`);
+      // }
+
+      // function pembagian() {
+      //   // parseint utk bilangan bulat 0,1,2 dan 2.0, 2.3 dst
+      //   // parsefloat utk bilangan pecahan
+      //   let nilai1 =parseFloat(document.getElementById ("nilai1").value);
+      //   let nilai2 =parseFloat(document.getElementById ("nilai2").value);
+
+      //   let hasil = nilai1 / nilai2;
+      //   alert(`Hasilnya adalah ${hasil}`);
+      // }
+
+      function perhitungan() {
+        let nilai1 = parseFloat(document.getElementById("nilai1").value);
+        let nilai2 = parseFloat(document.getElementById("nilai2").value);
+        let operator = document.getElementById("operator").value;
+        let hasil = "";
+
+        switch (operator) {
+          case "*":
+            hasil = nilai1 * nilai2;
+            break;
+          case "/":
+            hasil = nilai2 == 0 ? 'Tidak boleh 0' : nilai1 / nilai2;
+            break;
+          case "+":
+            hasil = nilai1 + nilai2;
+            break;
+          case "-":
+            hasil = nilai1 - nilai2;
+            break;
+          default:
+            hasil = "Tidak Ada !";
+        }
+        document.getElementById("hasil").value = hasil;
+      }
+
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+
+    <p id="pesan"></p>
+    <script>
+      // variable = sebuah penampung nilai
+      // cons = nilainya tetap
+      // var = nilainya bisa diubah
+      // let = nilainya bisa di ubah
+
+      const nama_depan = "Alfa";
+      const nama_belakang = "Beta";
+console.log("Nama Saya adalah " + nama_depan + " " + nama_belakang);
+console.log (`Nama Saya adalah ${nama_depan} ${nama_belakang}`);
+
+let nama = "Widit";
+let alamat = "Jakarta";
+let pesan = `Halo saya ${nama}, tinggal di ${alamat}`;
+let angka1 = 8;
+let angka2 = 2;
+
+document.getElementById("pesan").innerHTML = pesan;
+console.log(`hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 + angka2));
+console.log(`hasilnya adalah: ${angka1} - ${angka2} =`, (angka1 - angka2));
+console.log(`hasilnya adalah: ${angka1} * ${angka2} =`, (angka1 * angka2));
+console.log(`hasilnya adalah: ${angka1} / ${angka2} =`, (angka1 / angka2));
+
+console.log(`hasilnya adalah: ${angka1} % ${angka2} =`, (angka1 % angka2));
+
+// document.write(pesan);
+    </script>
+  </body>
+</html>
