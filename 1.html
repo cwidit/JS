@@ -10,29 +10,70 @@
 
     <p id="pesan"></p>
     <script>
-      // variable = sebuah penampung nilai
-      // cons = nilainya tetap
+      // variable = sebuah penampung nilai (string, int, float, bolean) disarankan pakai let drpd var dari sisi keamanan
+      // const = nilainya tetap
       // var = nilainya bisa diubah
-      // let = nilainya bisa di ubah
+      // let = nilainya bisa di ubah (gbs 2x declare) posisi di blockscope (bacanya dr atas ke bawah)
 
-      const nama_depan = "Alfa";
-      const nama_belakang = "Beta";
-console.log("Nama Saya adalah " + nama_depan + " " + nama_belakang);
-console.log (`Nama Saya adalah ${nama_depan} ${nama_belakang}`);
+//parse : merubah tipe data / convert string (pakai petik) jd int (tanpa petik karena angka)
 
-let nama = "Widit";
-let alamat = "Jakarta";
-let pesan = `Halo saya ${nama}, tinggal di ${alamat}`;
-let angka1 = 8;
-let angka2 = 2;
+const a = 10;
+console.log(a);
+a = 12;
+console.log(a); //error??karena angkanya berubah karena const itu angkanya pasti atau tdk dapat dirubah
 
-document.getElementById("pesan").innerHTML = pesan;
-console.log(`hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 + angka2));
-console.log(`hasilnya adalah: ${angka1} - ${angka2} =`, (angka1 - angka2));
-console.log(`hasilnya adalah: ${angka1} * ${angka2} =`, (angka1 * angka2));
-console.log(`hasilnya adalah: ${angka1} / ${angka2} =`, (angka1 / angka2));
+const angka1 = 1;
+const angka2 = 2;
+const total = angka1 + angka2; //jangan pakai petik krna masuknya int bukan string
+console.log (total);
 
-console.log(`hasilnya adalah: ${angka1} % ${angka2} =`, (angka1 % angka2));
+const depan = "Nihi";
+const belakang = "Sumba";
+const nama_lengkap = depan + " " + belakang; // hasilnya Nihi Sumba
+console.log(nama_lengkap);
+
+//contoh parse
+let teksUmur = "25";
+let angkaUmur = parseInt(teksUmur); //int
+//maka
+console.log(teksUmur + 5); //hasilnya 255 karna ga di parse
+console.log (angkaUmur + 5); //hasilnya 30 karna sudah di parse dengan add parseint di depan (teksUmur)
+
+//JSON.parse
+// JSON : javascript object notation
+// yg dr blkg server ngirim data bertipe string lalu js client/fe nangkep dan diubah jadi json tampilnya jadi objek data
+//objek di json/js/fe aksesnya pakai titik (.) cth dataServerTeks.nama
+let dataServerTeks = '{"nama": "Budi", "umur": "20", "kota": "Jakarta"}';
+
+console.log(dataServerTeks.nama); //hasilnya error harus dibuat kayak di bawah ini dulu
+let dataUser = JSON.parse (dataServerTeks)
+console.log(dataUser.nama); //klo mau tau umur tinggal diganti aja nama jadi umur dsb
+
+// ES(ecma script) versi 6 
+// ' '; " "; ` ` contoh cara baru utk memudahkan
+let contoh1 = "Asa";
+let contoh2 = "Madina";
+console.log(`${contoh1}  {contoh2}`) 
+// klo pakai notes bisa console.log(`Selamat datang ${contoh1}  {contoh2}, pemain badminton`)
+
+//       const nama_depan = "Alfa";
+//       const nama_belakang = "Beta";
+// console.log("Nama Saya adalah " + nama_depan + " " + nama_belakang);
+// console.log (`Nama Saya adalah ${nama_depan} ${nama_belakang}`);
+
+// let nama = "Widit";
+// let alamat = "Jakarta";
+// let pesan = `Halo saya ${nama}, tinggal di ${alamat}`;
+// let angka1 = 8;
+// let angka2 = 2;
+
+// document.getElementById("pesan").innerHTML = pesan;
+// console.log(`hasilnya adalah: ${angka1} + ${angka2} =`, (angka1 + angka2));
+// console.log(`hasilnya adalah: ${angka1} - ${angka2} =`, (angka1 - angka2));
+// console.log(`hasilnya adalah: ${angka1} * ${angka2} =`, (angka1 * angka2));
+// console.log(`hasilnya adalah: ${angka1} / ${angka2} =`, (angka1 / angka2));
+
+// console.log(`hasilnya adalah: ${angka1} % ${angka2} =`, (angka1 % angka2));
 
 // document.write(pesan);
     </script>

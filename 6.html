@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      .text-success {
+        color: green;
+        font-weight: bold;
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="inputNama" placeholder="Masukkan nama Anda" />
+    <button id="btn-sapa">Sapa saya!</button>
+
+    <h2 id="teksSapaan"></h2>
+
+    <br />
+    <br />
+    <ul id="daftarBelanja">
+      <li>Apel</li>
+      <li>Jeruk</li>
+      <li>Nanas</li>
+    </ul>
+    <button id="tambahBuah">Tambah Belanja</button>
+
+    <script>
+      // event handling + DOM
+      // id->#, class->.element/TAG:h1
+      const btnSapa = document.getElementById("btn-sapa");
+      btnSapa.addEventListener("click", function name() {
+        //mau melakukan apa
+
+        const inputNama = document.getElementById("inputNama").value;
+        const teksSapaan = document.getElementById("teksSapaan");
+        console.dir(inputNama);
+        // .log > ngecek nilai, .dir > ngecek propertiesnya
+        teksSapaan.innerText = `Halo, selamat datang ${inputNama}`;
+        // teksSapaan.style.color = "Red";
+        // teksSapaan.style.fontSize = "20px";
+        // teksSapaan.style.fontWeight = "normal";
+        teksSapaan.classList.add("text-success");
+      });
+
+      const daftarBelanja = document.getElementById("daftarBelanja");
+      const tambahBuah = document.getElementById("tambahBuah");
+      tambahBuah.addEventListener("click", function () {
+        // appendChild : hanya renov sebagian yang dibutuhkan saja
+        // innerhtml : merenov atau merombak secara keseluruhan
+        // better pakai appendChild kalau datanya banyak karena dibalik layar dy hanya menambahkan memori saja tanpa harus render ulang, sedangkan innerHTML sebaliknya
+        let liBaru = document.createElement("li");
+        liBaru.innerText = "Semangka";
+        // daftarBelanja.innerHTML += "<li>Pisang</li>";
+        daftarBelanja.appendChild(liBaru);
+      });
+
+      // btnSapa.addEventListener('click', () => {}); // == arrow function
+    </script>
+  </body>
+</html>
