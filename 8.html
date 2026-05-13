@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Javascript</title>
+  </head>
+  <body>
+    <!-- 
+  array di javascript
+  array itu sebuah tipe data yg bisa menampung banyak nilai. Ada beberapa mcm array:
+  1. Satu dimensi
+  2. Multi dimensi
+  3. Array object
+  -->
+
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th>Nama</th>
+          <th>Jenis Kelamin</th>
+          <th>Umur</th>
+          <th>Alamat</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="table-siswa"></tbody>
+    </table>
+    <script>
+      //1. satu dimensi
+      //berisi kumpulan string
+      let daftarBuah = ["Apel", "Nanas", "Jeruk", "Semangka"];
+      //berisi kumpulan number/angka/integer
+      let daftarHarga = [10000, 20000, 30000];
+
+      let mixHargaBuah = ["Nanas", 10000, "Semangka", 20000];
+
+      //0,1,2
+      console.log(daftarBuah[1]); //nanas
+      console.log(daftarHarga[1]);
+
+      //2. multi dimensi
+      let peserta = [
+        ["Alfa", "10", "Jakarta", "Pria"],
+        ["Beta", "11", "Bandung", "Pria"],
+      ];
+
+      console.log(peserta);
+      console.log(peserta[0][3]);
+      console.log(peserta[1][2]);
+
+      //3. array object
+
+      let daftarSiswa = [
+        {
+          nama: "Alfa Madya",
+          umur: "10",
+          alamat: "Jakarta",
+          jenisKelamin: "Pria",
+        },
+        {
+          nama: "Beta Madya",
+          umur: "11",
+          alamat: "Bandung",
+          jenisKelamin: "Pria",
+        },
+        {
+          nama: "Cart Madya",
+          umur: "12",
+          alamat: "Bogor",
+          jenisKelamin: "Pria",
+        },
+      ];
+      console.log(daftarSiswa);
+      console.log(daftarSiswa[0].nama);
+      console.log(daftarSiswa[1].nama);
+      console.log(daftarSiswa[2].nama);
+
+      function callName() {
+        return "Alfa";
+      }
+      const tbodySiswa = document.getElementById("table-siswa");
+      function getDataSiswa() {
+        tbodySiswa.innerHTML = "";
+
+        for (let i = 0; i < daftarSiswa.length; i++) {
+          let barisBaru = document.createElement("tr"); //<tr></tr>
+          barisBaru.innerHTML = `
+          <td>${daftarSiswa[i].nama}</td>
+          <td>${daftarSiswa[i].jenisKelamin}</td>
+          <td>${daftarSiswa[i].umur}</td>
+          <td>${daftarSiswa[i].alamat}</td>`;
+
+          console.log(barisBaru);
+          tbodySiswa.appendChild(barisBaru);
+        }
+      }
+
+      getDataSiswa();
+    </script>
+  </body>
+</html>
