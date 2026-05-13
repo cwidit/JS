@@ -89,7 +89,8 @@
           <td>${daftarSiswa[i].nama}</td>
           <td>${daftarSiswa[i].jenisKelamin}</td>
           <td>${daftarSiswa[i].umur}</td>
-          <td>${daftarSiswa[i].alamat}</td>`;
+          <td>${daftarSiswa[i].alamat}</td>
+          <td><button class='btn-hapus' data-index=${i} >Hapus</button>`;
 
           console.log(barisBaru);
           tbodySiswa.appendChild(barisBaru);
@@ -97,6 +98,15 @@
       }
 
       getDataSiswa();
+
+      tbodySiswa.addEventListener("click", function (event) {
+        if (event.target.classList.contains("btn-hapus")) {
+          let indexData = event.target.getAttribute("data-index");
+
+          daftarSiswa.splice(indexData, 1);
+          getDataSiswa();
+        }
+      });
     </script>
   </body>
 </html>
